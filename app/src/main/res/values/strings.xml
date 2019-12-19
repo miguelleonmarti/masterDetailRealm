@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">masterDetailRealm</string>
+    <string name="age_label">Age:</string>
+    <string name="phone_label">Phone:</string>
 </resources>
