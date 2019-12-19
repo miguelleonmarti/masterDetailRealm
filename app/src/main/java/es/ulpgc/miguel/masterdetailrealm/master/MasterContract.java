@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.masterdetailrealm.master;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.masterdetailrealm.model.Person;
 
 interface MasterContract {
 
@@ -21,7 +24,11 @@ interface MasterContract {
   }
 
   interface Model {
-    String fetchData();
+    interface OnMasterItemListFetchedCallback {
+      void setMasterItemList(List<Person> itemList);
+    }
+
+    void loadMasterItemList(OnMasterItemListFetchedCallback callback);
   }
 
   interface Router {

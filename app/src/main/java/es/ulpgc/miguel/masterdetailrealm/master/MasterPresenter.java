@@ -1,6 +1,9 @@
 package es.ulpgc.miguel.masterdetailrealm.master;
 
 import java.lang.ref.WeakReference;
+import java.util.List;
+
+import es.ulpgc.miguel.masterdetailrealm.model.Person;
 
 public class MasterPresenter implements MasterContract.Presenter {
 
@@ -32,24 +35,14 @@ public class MasterPresenter implements MasterContract.Presenter {
 
   @Override
   public void fetchData() {
-    // Log.e(TAG, "fetchData()");
-
-    // set passed state
-    MasterState state = router.getDataFromPreviousScreen();
-    if (state != null) {
-      viewModel.data = state.data;
-    }
-
-    if (viewModel.data == null) {
-      // call the model
-      String data = model.fetchData();
-
-      // set initial state
-      viewModel.data = data;
-    }
-
-    // update the view
-    view.get().displayData(viewModel);
+    model.loadMasterItemList(new MasterContract.Model.OnMasterItemListFetchedCallback() {
+      @Override
+      public void setMasterItemList(List<Person> itemList) {
+        // update the view
+        viewModel.data = itemList;
+        view.get().displayData(viewModel);
+      }
+    });
 
   }
 

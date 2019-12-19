@@ -3,6 +3,7 @@ package es.ulpgc.miguel.masterdetailrealm.app;
 import android.app.Application;
 
 import es.ulpgc.miguel.masterdetailrealm.master.MasterState;
+import io.realm.Realm;
 
 public class AppMediator extends Application {
 
@@ -11,6 +12,9 @@ public class AppMediator extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
+
+    // initializing Realm Database
+    Realm.init(this);
 
     // initializing states
     masterState = new MasterState();

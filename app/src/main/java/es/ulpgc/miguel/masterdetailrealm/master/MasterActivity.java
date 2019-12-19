@@ -20,6 +20,9 @@ public class MasterActivity
 
     // do the setup
     MasterScreen.configure(this);
+
+    // fetch list of people
+    presenter.fetchData();
   }
 
   @Override
@@ -40,6 +43,6 @@ public class MasterActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
-    ((TextView) findViewById(R.id.data)).setText(viewModel.data);
+    ((TextView) findViewById(R.id.data)).setText(viewModel.data.get(0).getName());
   }
 }
