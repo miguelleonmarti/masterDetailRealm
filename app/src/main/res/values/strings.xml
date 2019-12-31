@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">masterDetailRealm</string>
     <string name="age_label">Age:</string>
-    <string name="phone_label">Phone:</string>
+    <string name="dni_label">DNI:</string>
+    <string name="add_button_label">Add</string>
+    <string name="cancel_button_label">Cancel</string>
+    <string name="name_label">Name</string>
+    <string name="surname_label">Surname</string>
+    <string name="job_label">Job</string>
+    <string name="title_label">Title</string>
+    <string name="description_label">Description</string>
 </resources>

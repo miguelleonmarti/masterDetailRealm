@@ -1,13 +1,14 @@
 package es.ulpgc.miguel.masterdetailrealm.master;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import es.ulpgc.miguel.masterdetailrealm.R;
+import es.ulpgc.miguel.masterdetailrealm.model.Person;
 
 public class MasterActivity
     extends AppCompatActivity implements MasterContract.View {
@@ -15,6 +16,7 @@ public class MasterActivity
   public static String TAG = MasterActivity.class.getSimpleName();
 
   private MasterContract.Presenter presenter;
+  private Button addButton;
 
   // adapter
   MasterAdapter masterAdapter;
@@ -24,18 +26,28 @@ public class MasterActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_master);
 
-    // adapter
+    // adapter and button
     masterAdapter = new MasterAdapter(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Log.d("Click on person", "");
+        Person person = (Person) view.getTag();
+        presenter.startDetailScreen(person);
       }
     });
+    addButton = findViewById(R.id.addButton);
 
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.doorList);
     recyclerView.setAdapter(masterAdapter);
     recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
+    // listener
+    addButton.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        presenter.startAddScreen();
+      }
+    });
 
     // do the setup
     MasterScreen.configure(this);

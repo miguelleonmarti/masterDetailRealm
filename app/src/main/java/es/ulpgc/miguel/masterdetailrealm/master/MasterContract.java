@@ -21,6 +21,10 @@ interface MasterContract {
     void injectRouter(Router router);
 
     void fetchData();
+
+    void startAddScreen();
+
+    void startDetailScreen(Person person);
   }
 
   interface Model {
@@ -32,10 +36,12 @@ interface MasterContract {
   }
 
   interface Router {
-    void navigateToNextScreen();
+    void navigateToDetailScreen();
 
-    void passDataToNextScreen(MasterState state);
+    void passDataToDetailScreen(Person person);
 
     MasterState getDataFromPreviousScreen();
+
+    void navigateToAddScreen();
   }
 }

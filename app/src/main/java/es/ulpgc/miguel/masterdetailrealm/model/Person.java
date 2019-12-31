@@ -3,9 +3,10 @@ package es.ulpgc.miguel.masterdetailrealm.model;
 import io.realm.RealmObject;
 
 public class Person extends RealmObject {
+
   private int id;
-  private String name, surname;
-  private int age, phone;
+  private String name, surname, job, title, description, dni;
+  private int age;
 
   public Person() {}
 
@@ -33,6 +34,38 @@ public class Person extends RealmObject {
     this.surname = surname;
   }
 
+  public String getJob() {
+    return job;
+  }
+
+  public void setJob(String job) {
+    this.job = job;
+  }
+
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
+  public String getDescription() {
+    return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+  public String getDni() {
+    return dni;
+  }
+
+  public void setDni(String dni) {
+    this.dni = dni;
+  }
+
   public int getAge() {
     return age;
   }
@@ -41,11 +74,4 @@ public class Person extends RealmObject {
     this.age = age;
   }
 
-  public int getPhone() {
-    return phone;
-  }
-
-  public void setPhone(int phone) {
-    this.phone = phone;
-  }
 }

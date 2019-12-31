@@ -15,7 +15,7 @@ import es.ulpgc.miguel.masterdetailrealm.model.Person;
 public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.ViewHolder> {
 
   private List<Person> personList;
-  private View.OnClickListener listener;
+  private final View.OnClickListener listener;
 
   public MasterAdapter(View.OnClickListener listener) {
     this.personList = new ArrayList<>();
@@ -47,10 +47,11 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.ViewHolder
   @Override
   public void onBindViewHolder(ViewHolder holder, final int position) {
     holder.itemView.setTag(personList.get(position));
+    holder.itemView.setOnClickListener(listener);
 
     holder.personFullnameView.setText(personList.get(position).getSurname() + ", " +personList.get(position).getName());
     holder.personAgeView.setText(String.valueOf(personList.get(position).getAge()));
-    holder.personPhoneView.setText(String.valueOf(personList.get(position).getPhone()));
+    holder.personDNIView.setText(String.valueOf(personList.get(position).getDni()));
 
   }
 
@@ -61,13 +62,13 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.ViewHolder
 
   class ViewHolder extends RecyclerView.ViewHolder {
 
-    final TextView personFullnameView, personAgeView, personPhoneView;
+    final TextView personFullnameView, personAgeView, personDNIView;
 
     public ViewHolder(View view) {
       super(view);
       personFullnameView = view.findViewById(R.id.fullName);
       personAgeView = view.findViewById(R.id.age);
-      personPhoneView = view.findViewById(R.id.phone);
+      personDNIView = view.findViewById(R.id.dni);
     }
   }
 }

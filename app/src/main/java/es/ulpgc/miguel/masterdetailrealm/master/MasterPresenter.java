@@ -46,5 +46,14 @@ public class MasterPresenter implements MasterContract.Presenter {
 
   }
 
+  @Override
+  public void startAddScreen() {
+    router.navigateToAddScreen();
+  }
 
+  @Override
+  public void startDetailScreen(Person person) {
+    router.passDataToDetailScreen(person);
+    router.navigateToDetailScreen();
+  }
 }

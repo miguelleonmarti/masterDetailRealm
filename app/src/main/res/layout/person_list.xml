@@ -11,6 +11,6 @@
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         tools:context=".home.HomeActivity"
-        tools:listitem="@layout/door_item" />
+        tools:listitem="@layout/person_item" />
 
 </LinearLayout>
