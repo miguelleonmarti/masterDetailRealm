@@ -29,7 +29,7 @@ public class AddActivity
 
     // initializing buttons and text views
     cancelButton = findViewById(R.id.cancelButton);
-    addButton = findViewById(R.id.addButton);
+    addButton = findViewById(R.id.updateButton);
 
     nameText = findViewById(R.id.nameText);
     surnameText = findViewById(R.id.surnameText);

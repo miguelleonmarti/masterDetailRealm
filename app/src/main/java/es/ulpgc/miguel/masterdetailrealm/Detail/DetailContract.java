@@ -20,10 +20,14 @@ interface DetailContract {
     void injectRouter(Router router);
 
     void fetchData();
+
+    void startMasterScreen();
+
+    void deleteUser();
   }
 
   interface Model {
-    String fetchData();
+    void deleteUser(int id);
   }
 
   interface Router {
@@ -33,5 +37,7 @@ interface DetailContract {
 
     //DetailState getDataFromPreviousScreen();
     Person getDataFromPreviousScreen();
+
+    void navigateToMasterScreen();
   }
 }

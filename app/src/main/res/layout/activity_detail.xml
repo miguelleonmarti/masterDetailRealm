@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:isScrollContainer="true"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Detail.DetailActivity">
@@ -15,10 +16,17 @@
         android:textSize="24sp" />
 
     <Button
-        android:id="@+id/addButton"
+        android:id="@+id/updateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/add_button_label"
+        android:text="@string/update_button_label"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/deleteButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/delete_button_label"
         android:textSize="24sp" />
 
     <TextView

@@ -34,7 +34,7 @@ public class MasterActivity
         presenter.startDetailScreen(person);
       }
     });
-    addButton = findViewById(R.id.addButton);
+    addButton = findViewById(R.id.updateButton);
 
     // declaring the recyclerView, finding its id and changing its adapter
     RecyclerView recyclerView = findViewById(R.id.doorList);

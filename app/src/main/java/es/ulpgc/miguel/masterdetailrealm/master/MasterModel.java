@@ -20,7 +20,7 @@ public class MasterModel implements MasterContract.Model {
       @Override
       public void onChange(RealmResults<Person> people, OrderedCollectionChangeSet changeSet) {
         if (people.isEmpty()){
-          initPeople();
+          // TODO: QUITAR initPeople();
         }
       }
     });

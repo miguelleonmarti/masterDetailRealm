@@ -63,5 +63,13 @@ public class DetailPresenter implements DetailContract.Presenter {
 
   }
 
+  @Override
+  public void startMasterScreen() {
+    router.navigateToMasterScreen();
+  }
 
+  @Override
+  public void deleteUser() {
+    model.deleteUser(viewModel.person.getId());
+  }
 }
