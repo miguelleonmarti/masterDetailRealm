@@ -68,7 +68,7 @@ public class DetailActivity
                 !title.equals("") &&
                 !description.equals("")
         ) {
-          // TODO: presenter.updatePerson(name, surname, age, dni, job, title, description);
+          presenter.updatePerson(name, surname, age, dni, job, title, description);
           presenter.startMasterScreen();
         } else {
           Toast.makeText(DetailActivity.this, "There are some empty fields", Toast.LENGTH_SHORT).show();

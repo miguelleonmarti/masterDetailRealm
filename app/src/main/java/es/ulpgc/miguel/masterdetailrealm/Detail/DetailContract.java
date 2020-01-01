@@ -24,10 +24,14 @@ interface DetailContract {
     void startMasterScreen();
 
     void deleteUser();
+
+    void updatePerson(String name, String surname, String age, String dni, String job, String title, String description);
   }
 
   interface Model {
-    void deleteUser(int id);
+    void deletePerson(int id);
+
+    void updatePerson(int id, String name, String surname, String age, String dni, String job, String title, String description);
   }
 
   interface Router {

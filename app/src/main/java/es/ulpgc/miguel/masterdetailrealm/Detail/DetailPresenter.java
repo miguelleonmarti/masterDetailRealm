@@ -70,6 +70,11 @@ public class DetailPresenter implements DetailContract.Presenter {
 
   @Override
   public void deleteUser() {
-    model.deleteUser(viewModel.person.getId());
+    model.deletePerson(viewModel.person.getId());
+  }
+
+  @Override
+  public void updatePerson(String name, String surname, String age, String dni, String job, String title, String description) {
+    model.updatePerson(viewModel.person.getId(), name, surname, age, dni, job, title, description);
   }
 }

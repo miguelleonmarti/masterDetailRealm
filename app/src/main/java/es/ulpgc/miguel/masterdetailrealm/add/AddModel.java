@@ -24,6 +24,7 @@ public class AddModel implements AddContract.Model {
     person.setSurname(surname);
     person.setAge(Integer.parseInt(age));
     person.setDni(dni);
+    person.setJob(job);
     person.setTitle(title);
     person.setDescription(description);
     realm.commitTransaction();

@@ -15,9 +15,23 @@ public class DetailModel implements DetailContract.Model {
   }
 
   @Override
-  public void deleteUser(int id) {
+  public void deletePerson(int id) {
     realm.beginTransaction();
     realm.where(Person.class).equalTo("id", id).findAll().deleteAllFromRealm();
+    realm.commitTransaction();
+  }
+
+  @Override
+  public void updatePerson(int id, String name, String surname, String age, String dni, String job, String title, String description) {
+    realm.beginTransaction();
+    Person person = realm.where(Person.class).equalTo("id", id).findFirst();
+    person.setName(name);
+    person.setSurname(surname);
+    person.setAge(Integer.valueOf(age));
+    person.setDni(dni);
+    person.setJob(job);
+    person.setTitle(title);
+    person.setDescription(description);
     realm.commitTransaction();
   }
 }
