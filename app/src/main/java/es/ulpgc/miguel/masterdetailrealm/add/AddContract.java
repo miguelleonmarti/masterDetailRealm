@@ -19,11 +19,11 @@ interface AddContract {
 
     void startMasterScreen();
 
-    void addPerson(String name, String surname, String age, String dni, String job, String title, String description);
+    void addPerson(String name, String surname, String age, String dni, String job, String description);
   }
 
   interface Model {
-    void addPerson(String name, String surname, String age, String dni, String job, String title, String description);
+    void addPerson(String name, String surname, String age, String dni, String job, String description);
   }
 
   interface Router {

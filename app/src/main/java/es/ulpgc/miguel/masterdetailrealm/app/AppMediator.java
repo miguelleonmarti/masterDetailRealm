@@ -2,8 +2,8 @@ package es.ulpgc.miguel.masterdetailrealm.app;
 
 import android.app.Application;
 
-import es.ulpgc.miguel.masterdetailrealm.Detail.DetailState;
 import es.ulpgc.miguel.masterdetailrealm.add.AddState;
+import es.ulpgc.miguel.masterdetailrealm.Detail.DetailState;
 import es.ulpgc.miguel.masterdetailrealm.master.MasterState;
 import es.ulpgc.miguel.masterdetailrealm.model.Person;
 import io.realm.Realm;

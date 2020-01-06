@@ -15,15 +15,6 @@ public class MasterModel implements MasterContract.Model {
   public MasterModel() {
     // Get a Realm instance for this thread
     this.realm = Realm.getDefaultInstance();
-    final RealmResults<Person> people = realm.where(Person.class).findAllAsync();
-    people.addChangeListener(new OrderedRealmCollectionChangeListener<RealmResults<Person>>() {
-      @Override
-      public void onChange(RealmResults<Person> people, OrderedCollectionChangeSet changeSet) {
-        if (people.isEmpty()){
-          // TODO: QUITAR initPeople();
-        }
-      }
-    });
   }
 
   @Override
@@ -33,33 +24,9 @@ public class MasterModel implements MasterContract.Model {
       @Override
       public void onChange(RealmResults<Person> people, OrderedCollectionChangeSet changeSet) {
         changeSet.getInsertions();
+        // Once we get the list, it is passed to presenter
         callback.setMasterItemList(people);
       }
     });
   }
-
-  private void initPeople() {
-    realm.beginTransaction();
-    Person person1 = realm.createObject(Person.class);
-    person1.setId(0);
-    person1.setName("Miguel Ángel");
-    person1.setSurname("León Martí");
-    person1.setAge(21);
-    person1.setDni("43657386W");
-    person1.setJob("Student");
-    person1.setTitle("Soy yo");
-    person1.setDescription("Este es mi curriculum");
-    Person person2 = realm.createObject(Person.class);
-    person2.setId(1);
-    person2.setName("Antonio David");
-    person2.setSurname("Galván Hernández");
-    person2.setAge(21);
-    person2.setDni("43645786S");
-    person2.setJob("Antenna installer");
-    person2.setTitle("Soy El Anto");
-    person2.setDescription("No tengo dignidad");
-    realm.commitTransaction();
-  }
-
-
 }

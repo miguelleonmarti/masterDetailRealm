@@ -36,8 +36,8 @@ public class AddPresenter implements AddContract.Presenter {
   }
 
   @Override
-  public void addPerson(String name, String surname, String age, String dni, String job, String title, String description) {
-    model.addPerson(name, surname, age, dni, job, title, description);
+  public void addPerson(String name, String surname, String age, String dni, String job, String description) {
+    model.addPerson(name, surname, age, dni, job, description);
   }
 
 }

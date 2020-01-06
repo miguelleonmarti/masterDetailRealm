@@ -36,7 +36,6 @@ public class AddActivity
     ageText = findViewById(R.id.ageText);
     dniText = findViewById(R.id.dniText);
     jobText = findViewById(R.id.jobText);
-    titleText = findViewById(R.id.titleText);
     descriptionText = findViewById(R.id.descriptionText);
 
     // listeners
@@ -55,7 +54,6 @@ public class AddActivity
         String age = ageText.getText().toString();
         String dni = dniText.getText().toString();
         String job = jobText.getText().toString();
-        String title = titleText.getText().toString();
         String description = descriptionText.getText().toString();
         if (
             !name.equals("") &&
@@ -63,10 +61,9 @@ public class AddActivity
                 !age.equals("") &&
                 !dni.equals("") &&
                 !job.equals("") &&
-                !title.equals("") &&
                 !description.equals("")
         ) {
-          presenter.addPerson(name, surname, age, dni, job, title, description);
+          presenter.addPerson(name, surname, age, dni, job, description);
           presenter.startMasterScreen();
         } else {
           Toast.makeText(AddActivity.this, "There are some empty fields", Toast.LENGTH_SHORT).show();

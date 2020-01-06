@@ -5,7 +5,7 @@ import io.realm.RealmObject;
 public class Person extends RealmObject {
 
   private int id;
-  private String name, surname, job, title, description, dni;
+  private String name, surname, job, description, dni;
   private int age;
 
   public Person() {}
@@ -40,14 +40,6 @@ public class Person extends RealmObject {
 
   public void setJob(String job) {
     this.job = job;
-  }
-
-  public String getTitle() {
-    return title;
-  }
-
-  public void setTitle(String title) {
-    this.title = title;
   }
 
   public String getDescription() {

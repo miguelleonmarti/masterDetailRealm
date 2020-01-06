@@ -25,13 +25,13 @@ interface DetailContract {
 
     void deleteUser();
 
-    void updatePerson(String name, String surname, String age, String dni, String job, String title, String description);
+    void updatePerson(String name, String surname, String age, String dni, String job, String description);
   }
 
   interface Model {
     void deletePerson(int id);
 
-    void updatePerson(int id, String name, String surname, String age, String dni, String job, String title, String description);
+    void updatePerson(int id, String name, String surname, String age, String dni, String job, String description);
   }
 
   interface Router {

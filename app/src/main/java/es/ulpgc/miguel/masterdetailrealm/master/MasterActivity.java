@@ -59,9 +59,6 @@ public class MasterActivity
   @Override
   protected void onResume() {
     super.onResume();
-
-    // do some work
-    presenter.fetchData();
   }
 
   @Override
@@ -74,11 +71,7 @@ public class MasterActivity
     runOnUiThread(new Runnable() {
       @Override
       public void run() {
-      /*  // toast with logout message
-        if (!viewModel.getMessage().equals("")) {
-          Toast.makeText(getApplicationContext(), viewModel.getMessage(), Toast.LENGTH_LONG).show();
-        }
-      */ // adapter sets the list items
+       // adapter sets the list items
         masterAdapter.setItems(viewModel.data);
       }
     });

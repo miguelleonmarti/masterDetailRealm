@@ -22,7 +22,7 @@ public class DetailModel implements DetailContract.Model {
   }
 
   @Override
-  public void updatePerson(int id, String name, String surname, String age, String dni, String job, String title, String description) {
+  public void updatePerson(int id, String name, String surname, String age, String dni, String job, String description) {
     realm.beginTransaction();
     Person person = realm.where(Person.class).equalTo("id", id).findFirst();
     person.setName(name);
@@ -30,7 +30,6 @@ public class DetailModel implements DetailContract.Model {
     person.setAge(Integer.valueOf(age));
     person.setDni(dni);
     person.setJob(job);
-    person.setTitle(title);
     person.setDescription(description);
     realm.commitTransaction();
   }

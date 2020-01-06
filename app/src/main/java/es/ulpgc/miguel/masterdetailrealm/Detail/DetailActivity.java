@@ -21,7 +21,7 @@ public class DetailActivity
   private Button cancelButton, updateButton, deleteButton;
 
   // text views
-  private TextView nameText, surnameText, ageText, dniText, jobText, titleText, descriptionText;
+  private TextView nameText, surnameText, ageText, dniText, jobText, descriptionText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ public class DetailActivity
     ageText = findViewById(R.id.ageText);
     dniText = findViewById(R.id.dniText);
     jobText = findViewById(R.id.jobText);
-    titleText = findViewById(R.id.titleText);
     descriptionText = findViewById(R.id.descriptionText);
 
     // listeners
@@ -57,7 +56,6 @@ public class DetailActivity
         String age = ageText.getText().toString();
         String dni = dniText.getText().toString();
         String job = jobText.getText().toString();
-        String title = titleText.getText().toString();
         String description = descriptionText.getText().toString();
         if (
             !name.equals("") &&
@@ -65,10 +63,9 @@ public class DetailActivity
                 !age.equals("") &&
                 !dni.equals("") &&
                 !job.equals("") &&
-                !title.equals("") &&
                 !description.equals("")
         ) {
-          presenter.updatePerson(name, surname, age, dni, job, title, description);
+          presenter.updatePerson(name, surname, age, dni, job, description);
           presenter.startMasterScreen();
         } else {
           Toast.makeText(DetailActivity.this, "There are some empty fields", Toast.LENGTH_SHORT).show();
@@ -111,7 +108,6 @@ public class DetailActivity
     ((EditText) findViewById(R.id.ageText)).setText(String.valueOf(viewModel.person.getAge()));
     ((EditText) findViewById(R.id.dniText)).setText(viewModel.person.getDni());
     ((EditText) findViewById(R.id.jobText)).setText(viewModel.person.getJob());
-    ((EditText) findViewById(R.id.titleText)).setText(viewModel.person.getTitle());
     ((EditText) findViewById(R.id.descriptionText)).setText(viewModel.person.getDescription());
   }
 }
