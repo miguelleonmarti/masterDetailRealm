@@ -21,7 +21,7 @@ public class DetailActivity
   private Button cancelButton, updateButton, deleteButton;
 
   // text views
-  private TextView nameText, surnameText, ageText, dniText, jobText, descriptionText;
+  private TextView ratingText, nameText, surnameText, ageText, dniText, jobText, descriptionText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class DetailActivity
     updateButton = findViewById(R.id.updateButton);
     deleteButton = findViewById(R.id.deleteButton);
 
+    ratingText = findViewById(R.id.ratingText);
     nameText = findViewById(R.id.nameText);
     surnameText = findViewById(R.id.surnameText);
     ageText = findViewById(R.id.ageText);
@@ -51,6 +52,7 @@ public class DetailActivity
     updateButton.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        String rating = ratingText.getText().toString();
         String name = nameText.getText().toString();
         String surname = surnameText.getText().toString();
         String age = ageText.getText().toString();
@@ -58,17 +60,20 @@ public class DetailActivity
         String job = jobText.getText().toString();
         String description = descriptionText.getText().toString();
         if (
+            !rating.equals("") &&
             !name.equals("") &&
                 !surname.equals("") &&
                 !age.equals("") &&
                 !dni.equals("") &&
                 !job.equals("") &&
-                !description.equals("")
+                !description.equals("") &&
+                Integer.valueOf(rating) >= 0 &&
+                Integer.valueOf(rating) <= 10
         ) {
-          presenter.updatePerson(name, surname, age, dni, job, description);
+          presenter.updatePerson(rating, name, surname, age, dni, job, description);
           presenter.startMasterScreen();
         } else {
-          Toast.makeText(DetailActivity.this, "There are some empty fields", Toast.LENGTH_SHORT).show();
+          Toast.makeText(DetailActivity.this, "There are some empty fields or rating is greater than 10", Toast.LENGTH_SHORT).show();
         }
       }
     });
@@ -103,6 +108,7 @@ public class DetailActivity
     //Log.e(TAG, "displayData()");
 
     // deal with the data
+    //((EditText) findViewById(R.id.ratingText)).setText(viewModel.person.getRating());
     ((EditText) findViewById(R.id.nameText)).setText(viewModel.person.getName());
     ((EditText) findViewById(R.id.surnameText)).setText(viewModel.person.getSurname());
     ((EditText) findViewById(R.id.ageText)).setText(String.valueOf(viewModel.person.getAge()));

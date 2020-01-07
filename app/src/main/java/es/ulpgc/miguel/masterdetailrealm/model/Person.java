@@ -4,7 +4,7 @@ import io.realm.RealmObject;
 
 public class Person extends RealmObject {
 
-  private int id;
+  private int id, rating;
   private String name, surname, job, description, dni;
   private int age;
 
@@ -66,4 +66,11 @@ public class Person extends RealmObject {
     this.age = age;
   }
 
+  public int getRating() {
+    return rating;
+  }
+
+  public void setRating(int rating) {
+    this.rating = rating;
+  }
 }

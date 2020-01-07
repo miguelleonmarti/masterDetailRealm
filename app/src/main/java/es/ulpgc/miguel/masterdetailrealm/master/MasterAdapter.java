@@ -59,7 +59,12 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.ViewHolder
     // Each item of the list or cell, has these attributes
     holder.personFullnameView.setText(personList.get(position).getSurname() + ", " +personList.get(position).getName());
     holder.personAgeView.setText(String.valueOf(personList.get(position).getAge()));
-    holder.personDNIView.setText(String.valueOf(personList.get(position).getDni()));
+    String stars = "";
+    int nStars = personList.get(position).getRating();
+    for(int i = 0; i < nStars; i++) {
+      stars += "*";
+    }
+    holder.personDNIView.setText(stars); // TODO: CAMBIO A RATING
 
     // Each item has a default image that is downloaded from the internet by url
     loadImageFromURL(holder.imageView, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJcKgk5kFmglQsOLKNrkp1oEC0e33KjNSaG_njjfk1NvhpyG0r&s"); // TODO: poner el de cada uno

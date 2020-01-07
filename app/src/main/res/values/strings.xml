@@ -11,4 +11,5 @@
     <string name="description_label">Description</string>
     <string name="update_button_label">Update</string>
     <string name="delete_button_label">Delete</string>
+    <string name="rating_label">Rating</string>
 </resources>

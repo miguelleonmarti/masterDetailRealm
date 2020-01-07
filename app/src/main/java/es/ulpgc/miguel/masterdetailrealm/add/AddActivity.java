@@ -20,7 +20,7 @@ public class AddActivity
   private Button cancelButton, addButton;
 
   // edit texts
-  private EditText nameText, surnameText, ageText, dniText, jobText, titleText, descriptionText;
+  private EditText nameText, surnameText, ageText, dniText, jobText, descriptionText;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

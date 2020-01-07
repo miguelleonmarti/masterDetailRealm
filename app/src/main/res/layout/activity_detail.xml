@@ -30,6 +30,20 @@
         android:textSize="24sp" />
 
     <TextView
+        android:id="@+id/ratingLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rating_label"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/ratingText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textSize="24sp" />
+
+    <TextView
         android:id="@+id/nameLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
