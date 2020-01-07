@@ -64,7 +64,7 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.ViewHolder
     for(int i = 0; i < nStars; i++) {
       stars += "*";
     }
-    holder.personDNIView.setText(stars); // TODO: CAMBIO A RATING
+    holder.personRatingView.setText(stars); // TODO: CAMBIO A RATING
 
     // Each item has a default image that is downloaded from the internet by url
     loadImageFromURL(holder.imageView, "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJcKgk5kFmglQsOLKNrkp1oEC0e33KjNSaG_njjfk1NvhpyG0r&s"); // TODO: poner el de cada uno
@@ -77,14 +77,14 @@ public class MasterAdapter extends RecyclerView.Adapter<MasterAdapter.ViewHolder
 
   class ViewHolder extends RecyclerView.ViewHolder {
 
-    final TextView personFullnameView, personAgeView, personDNIView;
+    final TextView personFullnameView, personAgeView, personRatingView;
     final ImageView imageView;
 
     public ViewHolder(View view) {
       super(view);
       personFullnameView = view.findViewById(R.id.fullName);
       personAgeView = view.findViewById(R.id.age);
-      personDNIView = view.findViewById(R.id.dni);
+      personRatingView = view.findViewById(R.id.dni); // NO LO HE CAMBIADO POR PROBLEMAS CON EL IDE
       imageView = view.findViewById(R.id.image);
     }
   }
